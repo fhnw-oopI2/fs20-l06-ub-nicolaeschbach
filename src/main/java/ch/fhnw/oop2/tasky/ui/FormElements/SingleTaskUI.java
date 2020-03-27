@@ -1,4 +1,4 @@
-package ch.fhnw.oop2.tasky.part4.ui;
+package ch.fhnw.oop2.tasky.ui.FormElements;
 
 import java.time.LocalDate;
 
@@ -9,7 +9,7 @@ import javafx.scene.layout.*;
 
 
 
-public class TaskUI extends VBox {
+public class SingleTaskUI extends VBox {
 	private long id;
 	private LocalDate due;
 	private String title;
@@ -20,7 +20,7 @@ public class TaskUI extends VBox {
 	private Label titleLabel;
 	
 
-	public TaskUI(long id, String title, LocalDate due, State state) {
+	public SingleTaskUI(long id, String title, LocalDate due, State state) {
 		// TODO Auto-generated constructor stub
 		this.due = due;
 		this.id = id;
@@ -42,12 +42,18 @@ public class TaskUI extends VBox {
 	}
 	
 	private void layoutControls() {
+		setPadding(new Insets(8));
 		setMargin(this, new Insets(5,0,5,0));
-		setStyle("-fx-border-color: black;");
+		setStyle("-fx-border-color: black;"
+				+ "-fx-background-color: #d6d6d6; "
+				+ "-fx-background-radius: 5px;"
+				+ "-fx-border-width: 2px; "
+				+ "-fx-border-radius: 5px;");
+
 		getChildren().add(idLabel);
 		getChildren().add(titleLabel);
 		getChildren().add(dueLabel);
-	//	idField.getChildren().addAll((Collection<? extends Node>) new TextField("id"));
+
 	}
 	
 

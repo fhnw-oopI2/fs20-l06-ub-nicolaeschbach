@@ -20,18 +20,16 @@ public class ApplicationUI extends BorderPane {
 
 	private void initializeControls() {
 		newTaskForm = new addTaskFormUI();
-		taskOverview = new TaskOverview();
+		taskOverview = new BoardTasksUI();
 	}
 	
 	private void layoutControls() {
 
 		setCenter(taskOverview);
 		setRight(newTaskForm);
-		setHeight(400);
-		setWidth(500);
 		setMargin(taskOverview, new Insets(5));
-		newTaskForm.setMinWidth(getHeight()/5*2);
-		taskOverview.setMinWidth(getHeight()/5*3);		
+		setMargin(newTaskForm, new Insets(50,50,0,0));
+
 		
 	}
 }

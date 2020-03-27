@@ -11,9 +11,9 @@ import java.util.Scanner;
 public final class TaskyCLI {
 
 
-    public static void main(String[] args) throws IOException {
-        new TaskyCLI().start();
-    }
+//    public static void main(String[] args) throws IOException {
+//        new TaskyCLI().start();
+//    }
 
 
     private void start() {

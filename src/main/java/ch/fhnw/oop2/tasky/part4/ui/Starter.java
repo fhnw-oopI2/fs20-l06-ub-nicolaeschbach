@@ -16,8 +16,8 @@ public class Starter extends Application {
 		Scene scene = new Scene(parentRoot);
 		primaryStage.setScene(scene);
 		primaryStage.setTitle("Tasky");
-		primaryStage.setHeight(600);
-		primaryStage.setWidth(800);
+		primaryStage.setHeight(700);
+		primaryStage.setWidth(1000);
 		primaryStage.show();
 	}
 
