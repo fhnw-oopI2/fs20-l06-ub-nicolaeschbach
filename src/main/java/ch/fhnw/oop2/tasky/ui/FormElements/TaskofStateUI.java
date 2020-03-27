@@ -36,7 +36,6 @@ public class TaskofStateUI extends VBox{
 		setMinHeight(600);
 		setMargin(this, new Insets(10,0,5,0));
 		setPadding(new Insets(10,20,0,20));
-		setStyle("-fx-border-color: blue;");	
 		setStyle("-fx-background-color: #" + state.getColor() + ";");
 		setSpacing(5);
 		

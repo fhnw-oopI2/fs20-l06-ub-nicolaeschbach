@@ -1,24 +1,21 @@
 package ch.fhnw.oop2.tasky.part4.ui;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
+import java.util.*;
 
 import ch.fhnw.oop2.tasky.Core.*;
-import ch.fhnw.oop2.tasky.ui.FormElements.TaskofStateUI;
-import javafx.geometry.Insets;
-import javafx.scene.control.Label;
+import ch.fhnw.oop2.tasky.ui.FormElements.*;
+import javafx.geometry.*;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
+import javafx.scene.text.*;
+
 
 
 public class BoardTasksUI extends HBox{
 	private List<Pane> tasks;
 	public Repository repository;
-	
+	private ButtonsGridUI buttons;
 	public BoardTasksUI() {
 		// TODO Auto-generated constructor stub
 		repository = new InMemoryMapRepository();
@@ -31,8 +28,6 @@ public class BoardTasksUI extends HBox{
 		layoutControls();
 	}
 
-	
-	
 	private void initializeControls() {
 		tasks = new ArrayList<Pane>();
 		Arrays.stream(State.values())
@@ -41,7 +36,6 @@ public class BoardTasksUI extends HBox{
 					Label label = new Label(x.toString());
 					label.setFont(Font.font("",FontWeight.BOLD,15));
 					box.setMinWidth(180);
-				//	box.setMinHeight(800);
 					box.getChildren().add(label);
 					box.getChildren().add(new TaskofStateUI(repository, x));									
 					return box;
@@ -57,9 +51,7 @@ public class BoardTasksUI extends HBox{
 		setSpacing(15);
 		tasks.stream()
 			.forEach(x -> getChildren().add(x));
-
 		tasks.stream()
 		.forEach(x -> x.setPadding(new Insets(2))	);
-	
 	}
 }

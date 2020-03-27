@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 public class ApplicationUI extends BorderPane {
 	Pane newTaskForm;
 	Pane taskOverview;
+	Pane bottomBar;
 	Stage stage;
 	
 	public ApplicationUI(Stage stage) {
@@ -21,14 +22,16 @@ public class ApplicationUI extends BorderPane {
 	private void initializeControls() {
 		newTaskForm = new addTaskFormUI();
 		taskOverview = new BoardTasksUI();
+		bottomBar = new bottomBarUI();
 	}
 	
 	private void layoutControls() {
 
 		setCenter(taskOverview);
 		setRight(newTaskForm);
+		setBottom(bottomBar);
 		setMargin(taskOverview, new Insets(5));
-		setMargin(newTaskForm, new Insets(50,50,0,0));
+		setMargin(newTaskForm, new Insets(15,50,0,0));
 
 		
 	}
